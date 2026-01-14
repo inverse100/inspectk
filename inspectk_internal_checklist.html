@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspectK | 내부 진단용 예비 점검표</title>
+    <style>
+        :root {
+            --primary: #0066FF;
+            --bg: #f8f9fa;
+            --text: #212529;
+            --border: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .form-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* Diagram Area */
+        .diagram-container {
+            text-align: center;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            margin-bottom: 15px;
+        }
+
+        .diagram-img {
+            width: 100%;
+            max-width: 300px;
+            opacity: 0.7;
+        }
+
+        .code-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .code-item {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .code-item span {
+            font-weight: 800;
+            color: #d9534f;
+            margin-right: 5px;
+        }
+
+        /* Checklist Items */
+        .check-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .check-item input {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .photo-guide {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .photo-guide b {
+            color: var(--primary);
+        }
+
+        .footer-note {
+            font-size: 11px;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">InspectK</div>
+        <div class="title">INTERNAL INSPECTION CHECKLIST (진단사용 예비 점검표)</div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">1. 기본 정보 및 매칭</div>
+        <div style="font-size: 14px;">
+            LOT 번호: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ] <br>
+            차량 번호: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">2. 차량 상태 전개도 (표기용)</div>
+        <div class="diagram-container">
+            <img src="img/diagram.gif" alt="Outline" class="diagram-img">
+        </div>
+        <div class="code-grid">
+            <div class="code-item"><span>W</span> 판금 도색</div>
+            <div class="code-item"><span>X</span> 교환</div>
+            <div class="code-item"><span>A</span> 스크래치</div>
+            <div class="code-item"><span>C</span> 부식</div>
+            <div class="code-item"><span>U</span> 덴트</div>
+            <div class="code-item"><span>T</span> 깨짐(T)</div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">3. 필수 촬영 체크리스트 (40장 기준)</div>
+        <div class="check-item"><input type="checkbox"> 외장 (총 10장: 좌5, 우5, 앞,위,뒤)</div>
+        <div class="check-item"><input type="checkbox"> 하체 (총 8장: 휠4, 타이어4, 하부)</div>
+        <div class="check-item"><input type="checkbox"> 내장 (총 20장: 시트, 옵션, 대시보드)</div>
+
+        <div class="photo-guide">
+            <b>[필독]</b> 최상의 차량(No Accident)인 경우에만 <b>Full Report</b>로 업그레이드하여 바이어에게 리포팅합니다. 사고 차량은 퀵체크 단계에서 중단합니다.
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">4. 최종 판정</div>
+        <div class="check-item"><input type="radio" name="verdict"> <b>Full Report 발행 (추천)</b></div>
+        <div class="check-item"><input type="radio" name="verdict"> Quick Check 종료 (비추천)</div>
+    </div>
+
+    <div class="footer-note">
+        본 문서는 InspectK 내부 운영용이며 외부 바이어에게 노출하지 않습니다.<br>
+        © 2026 InspectK Professional Group
+    </div>
+
+</body>
+
+</html>

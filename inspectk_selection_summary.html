@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspectK | Daily Selection Summary</title>
+    <style>
+        :root {
+            --primary: #0066FF;
+            --bg: #0A0A0A;
+            --card-bg: #1A1A1A;
+            --text: #FFFFFF;
+            --text-dim: #A0A0A0;
+            --success: #00C853;
+            --warning: #FFAB00;
+            --danger: #FF3D00;
+            --border: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding-bottom: 50px;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--text);
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .summary-header {
+            background: linear-gradient(135deg, #1A1A1A 0%, #000 100%);
+            padding: 25px 20px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .summary-stats {
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+
+        .summary-stats span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .list-section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Vehicle Card Style */
+        .car-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #222;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            position: relative;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .car-card:active {
+            transform: scale(0.98);
+            background: #222;
+        }
+
+        .car-img {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: #222;
+        }
+
+        .car-info {
+            flex: 1;
+        }
+
+        .car-lot {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .car-name {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .car-plate {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .star-rating {
+            color: var(--warning);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        /* Recommendation Highlight */
+        .recommend-tag {
+            position: absolute;
+            top: -5px;
+            right: 10px;
+            background: var(--primary);
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: 800;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .recommended {
+            border: 2px solid var(--primary);
+            background: rgba(0, 102, 255, 0.05);
+        }
+
+        .rejected {
+            opacity: 0.6;
+        }
+
+        .f-report-btn {
+            background: var(--primary);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 11px;
+            margin-top: 40px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Inspect<span>K</span></div>
+    </header>
+
+    <div class="container">
+
+        <div class="summary-header">
+            <h1 class="summary-title">Daily Selection Summary</h1>
+            <p class="summary-stats">Total <span>7</span> Vehicles Scaled | <span>3</span> Recommended</p>
+        </div>
+
+        <h2 class="list-section-title">Verified Top Units (Best 3)</h2>
+
+        <!-- Rec 1 -->
+        <a href="inspectk_final_report.html" class="car-card recommended">
+            <span class="recommend-tag">Highly Recommended</span>
+            <img src="img/select/car_list_06.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #7241</p>
+                <p class="car-name">THE NEW MALIBU</p>
+                <p class="car-plate">123가 4567 | 2017 | Silver</p>
+                <div class="star-rating">★★★★★ (Strong Pass)</div>
+                <span class="f-report-btn">View Full Report</span>
+            </div>
+        </a>
+
+        <!-- Rec 2 -->
+        <a href="inspectk_final_report.html" class="car-card recommended shadow">
+            <span class="recommend-tag">Good Condition</span>
+            <img src="img/select/car_list_02.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #5122</p>
+                <p class="car-name">Kia K5 (DL3)</p>
+                <p class="car-plate">234나 5678 | White</p>
+                <div class="star-rating">★★★★☆ (Clean Unit)</div>
+                <span class="f-report-btn">View Full Report</span>
+            </div>
+        </a>
+
+        <!-- Rec 3 -->
+        <a href="inspectk_final_report.html" class="car-card recommended">
+            <span class="recommend-tag">Value Choice</span>
+            <img src="img/select/car_list_03.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #4091</p>
+                <p class="car-name">Hyundai Tucson (NX4)</p>
+                <p class="car-plate">345다 6789 | Black</p>
+                <div class="star-rating">★★★☆☆ (Standard Pass)</div>
+                <span class="f-report-btn">View Full Report</span>
+            </div>
+        </a>
+
+        <h2 class="list-section-title" style="margin-top:40px;">Filtered Units (Quick Checked)</h2>
+
+        <!-- Rejected 1 -->
+        <div class="car-card rejected">
+            <img src="img/select/car_list_04.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #8812</p>
+                <p class="car-name">Kia Seltos</p>
+                <p class="car-plate">456라 1234 | Grey</p>
+                <p style="font-size:11px; color:var(--danger); margin-top:4px;">Result: Engine Oil Leak Detected</p>
+            </div>
+        </div>
+
+        <!-- Rejected 2 -->
+        <div class="car-card rejected">
+            <img src="img/select/car_list_05.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #6631</p>
+                <p class="car-name">Hyundai Sonata (DN8)</p>
+                <p class="car-plate">567마 2345 | White</p>
+                <p style="font-size:11px; color:var(--danger); margin-top:4px;">Result: Frame Accident History</p>
+            </div>
+        </div>
+
+        <!-- Rejected 3 -->
+        <div class="car-card rejected">
+            <img src="img/select/car_list_01.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #1124</p>
+                <p class="car-name">Genesis G80</p>
+                <p class="car-plate">678바 3456 | Black</p>
+                <p style="font-size:11px; color:var(--danger); margin-top:4px;">Result: Mileage Spun Suspected</p>
+            </div>
+        </div>
+
+        <!-- Rejected 4 -->
+        <div class="car-card rejected">
+            <img src="img/select/car_list_07.jpg" class="car-img" alt="Car">
+            <div class="car-info">
+                <p class="car-lot">LOT #9002</p>
+                <p class="car-name">Kia Carnival</p>
+                <p class="car-plate">789사 4567 | White</p>
+                <p style="font-size:11px; color:var(--danger); margin-top:4px;">Result: Transmission Error Code</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>InspectK Professional Group</strong><br>
+            Selected by Expert Certified Inspectors<br>
+            © 2026 All Rights Reserved.
+        </div>
+    </div>
+
+</body>
+
+</html>
